@@ -1,4 +1,12 @@
+import sys
+import math
 
+mode = None
+loan_principal = None
+annuity_payment = None
+number_of_payments = None
+loan_interest = None
+overpayment = None
 
 for arg in sys.argv:
     if "--type=" in arg:
