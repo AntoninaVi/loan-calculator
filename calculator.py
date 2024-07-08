@@ -1,6 +1,7 @@
 import sys
 import math
 
+
 mode = None
 loan_principal = None
 annuity_payment = None
