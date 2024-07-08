@@ -61,7 +61,7 @@ else:
             print(output_message)
         elif annuity_payment is None:
             annuity_payment = loan_principal * loan_interest * math.pow(1 + loan_interest, number_of_payments) / \
-                              (math.pow((1 + loan_interest), number_of_payments) - 1)
+            (math.pow((1 + loan_interest), number_of_payments) - 1)
             annuity_payment = math.ceil(annuity_payment)
             print(f"Your monthly payment = {annuity_payment}!")
         overpayment = annuity_payment * number_of_payments - loan_principal
