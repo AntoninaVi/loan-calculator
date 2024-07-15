@@ -32,7 +32,7 @@ if len(sys.argv) < 5 or loan_interest is None or \
     print("Incorrect parameters")
 else:
     if mode == "diff":
-        overpayment = -loan_principal
+        overpayment =- loan_principal
         for current_payment in range(1, number_of_payments + 1):
             differentiate_payment = loan_principal / number_of_payments + \
                 loan_interest * (loan_principal -
