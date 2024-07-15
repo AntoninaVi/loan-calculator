@@ -24,9 +24,9 @@ for arg in sys.argv:
 if len(sys.argv) < 5 or loan_interest is None or \
    mode != "annuity" and mode != "diff" or \
    mode == "diff" and annuity_payment or \
-   (loan_principal is not None and loan_principal < 0 or \
-   annuity_payment is not None and annuity_payment < 0 or \
-   number_of_payments is not None and number_of_payments < 0 or \
+   (loan_principal is not None and loan_principal < 0 or
+   annuity_payment is not None and annuity_payment < 0 or
+   number_of_payments is not None and number_of_payments < 0 or
    loan_interest is not None and loan_interest < 0):
 
     print("Incorrect parameters")
@@ -35,8 +35,8 @@ else:
         overpayment = -loan_principal
         for current_payment in range(1, number_of_payments + 1):
             differentiate_payment = loan_principal / number_of_payments + \
-                loan_interest * (loan_principal - \
-                (loan_principal * (current_payment - 1)) / number_of_payments)
+                loan_interest * (loan_principal -
+                                 (loan_principal * (current_payment - 1)) / number_of_payments)
             differentiate_payment = math.ceil(differentiate_payment)
             overpayment += differentiate_payment
             print(f"Month {current_payment}: payment is {differentiate_payment}")
@@ -56,17 +56,14 @@ else:
             if years:
                 output_message += f" {years} year" if years == 1 else f" {years} years"
             if months and months != 12:
-                output_message += f" and {months} month" if months == 1 else f" and {months} months"
+                output_message += f" and {
+                    months} month" if months == 1 else f" and {months} months"
             output_message += " to repay this loan!"
             print(output_message)
         elif annuity_payment is None:
             annuity_payment = loan_principal * loan_interest * math.pow(1 + loan_interest, number_of_payments) / \
-            (math.pow((1 + loan_interest), number_of_payments) - 1)
+                (math.pow((1 + loan_interest), number_of_payments) - 1)
             annuity_payment = math.ceil(annuity_payment)
             print(f"Your monthly payment = {annuity_payment}!")
         overpayment = annuity_payment * number_of_payments - loan_principal
     print(f"\nOverpayment = {overpayment}")
-
-
-
-
