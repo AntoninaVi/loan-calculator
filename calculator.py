@@ -67,5 +67,3 @@ else:
             print(f"Your monthly payment = {annuity_payment}!")
         overpayment = annuity_payment * number_of_payments - loan_principal
     print(f"\nOverpayment = {overpayment}")
-
-
