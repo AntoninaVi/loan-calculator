@@ -39,8 +39,7 @@ else:
                                  (loan_principal * (current_payment - 1)) / number_of_payments)
             differentiate_payment = math.ceil(differentiate_payment)
             overpayment += differentiate_payment
-            print(f"Month {current_payment}: payment is {
-                  differentiate_payment}")
+            print(f"Month {current_payment}: payment is {differentiate_payment}")
     else:
         if loan_principal is None:
             loan_principal = annuity_payment / ((loan_interest * math.pow(1 + loan_interest, number_of_payments)) /
@@ -68,3 +67,6 @@ else:
             print(f"Your monthly payment = {annuity_payment}!")
         overpayment = annuity_payment * number_of_payments - loan_principal
     print(f"\nOverpayment = {overpayment}")
+
+
+
